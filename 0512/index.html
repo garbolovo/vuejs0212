@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Users</title>
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    #menu {
+      display: flex;
+      width: 250px;
+      margin: 10px 10px;
+      justify-content: space-between;
+
+    }
+
+
+    .img {
+      height: 40px;
+      width: 40px;
+      border-radius: 5px;
+    }
+
+
+    table tr td {
+      border: darkgray solid 1px;
+      border-radius: 3px;
+      padding: 10px;
+      text-align: center;
+    }
+
+    table tr td:first-child {
+      width: 200px;
+      height: 30px;
+    }
+
+  </style>
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<!--app-->
+<div id="app">
+  <h1>{{title }}</h1>
+
+  <div id="menu">
+    <h3>Users - {{users.length}}</h3>
+    <button id="hide-users" @click="hideUsers">Hide Users</button>
+  </div>
+
+
+<!--Users Table-->
+  <table v-show="!hide">
+    <tr id="users" v-for='(user, index) in users' key='user.id'>
+
+      <td>{{`${user.firstName} ${user.lastName} is ${user.age}`}}</td>
+      <td>
+        <img class='img' v-if='user.avatar' :src='user.avatar'>
+        <img class='img' v-else :src='defaultAva'>
+      </td>
+
+    </tr>
+  </table>
+
+</div>
+
+<!--script-->
+<script>
+  new Vue ({
+    el: '#app',
+    
+    data: function() {
+      return {
+        title: 'Hello Vue',
+        defaultAva: 'https://huntpng.com/images250/default-avatar-png-18.png',
+        users: [
+          {
+            firstName: 'John',
+            lastName: 'Doe',
+            age:31,
+            // avatar: 'https://cs16planet.ru/steam-avatars/images/avatar3242.jpg'
+
+          },
+          
+          {
+            firstName: 'Katie',
+            lastName: 'Williams',
+            age:33,
+            // avatar: 'https://99px.ru/sstorage/1/2016/10/image_131101611222045608.jpg'
+          },
+          
+          {
+            firstName: 'Bill',
+            lastName: 'Murray',
+            age:21,
+            avatar: 'https://cs16planet.ru/steam-avatars/images/avatar3324.jpg'
+          },
+          
+          {
+            firstName: 'Ashly',
+            lastName: 'Tompson',
+            age:34,
+            avatar: 'https://cs16planet.ru/steam-avatars/images/avatar3141.jpg'
+          },
+          
+          {
+            firstName: 'Brad',
+            lastName: 'Traversy',
+            age:36,
+            avatar: 'https://99px.ru/sstorage/1/2018/03/image_11803181746144311267.jpg'
+          },
+
+
+        ],
+        hide: false,
+
+      }
+    },
+
+
+  methods: {
+     hideUsers: function() {
+       this.hide = !this.hide
+     }
+  }
+
+
+
+
+})
+  
+  </script>
+</body>
+</html>
