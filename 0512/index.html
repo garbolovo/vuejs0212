@@ -52,13 +52,13 @@
 
   <div id="menu">
     <h3>Users - {{users.length}}</h3>
-    <button id="hide-users" @click="hideUsers">Hide Users</button>
+    <button type="button" id="hide-users" @click="showHideUsers">Hide Users</button>
   </div>
 
 
 <!--Users Table-->
-  <table v-show="!hide">
-    <tr id="users" v-for='(user, index) in users' key='user.id'>
+  <table v-if="!hide">
+    <tr id="users" v-for='(user, index) in users' key='user.firstName'>
 
       <td>{{`${user.firstName} ${user.lastName} is ${user.age}`}}</td>
       <td>
@@ -126,7 +126,7 @@
 
 
   methods: {
-     hideUsers: function() {
+     showHideUsers: function() {
        this.hide = !this.hide
      }
   }
