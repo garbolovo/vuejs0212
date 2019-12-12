@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Users</title>
+  <link rel="stylesheet" href=https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    {{ title }}
+    <!-- component usage -->
+    <users-list v-bind:compUsers="users"></users-list>
+    
+    
+  </div>
+    
+  <!-- component settled (logic)-->
+  <template id="some-div">
+    <div>
+      <table>
+        <tr v-for="user in compusers">
+          <td>{{user.name}}</td>
+          <td>{{user.age}}</td>
+          <td class="online" v-if="user.isActive">ONLINE</td>
+          <td class="offline" v-else>OFFLINE</td>
+          <td>{{user.phone}}</td>
+        </tr>
+      </table>
+    </div>
+  </template>
+    
+  <script>
+
+    // componet data
+    let UsersList = {
+      template: '#some-div',
+      props: {
+        compusers: Array
+      },
+      data: function() {
+        return {
+          componentTitle: 'TITLE OF COMP'
+          
+        }
+      }
+
+    }
+    
+// =====================================///////
+
+    new Vue({
+      el: '#app',
+      components: {
+        'users-list': UsersList,
+        
+      },
+      data: function() {
+        return {
+          title: 'Hello Vue',
+          users: [],
+        }
+      },
+
+      methods: {
+        
+      },
+
+      watch: {
+        users: function() {
+          console.log('Users changed...')
+        }
+      },
+
+      
+
+      created() {
+        this.users = [
+            {name: 'Alex', age: 31, isActive: true, phone: '111-222-111'},
+            {name: 'Bill', age: 24, isActive: false, phone: '222-222-777'},
+            {name: 'Ammy', age: 21, isActive: true, phone: '454-333-323'},
+            {name: 'Alice', age: 26, isActive: true, phone: '555-222-122'},
+            {name: 'John', age: 37, isActive: false, phone: '211-554-211'},
+          ]
+
+      }
+    })
+  </script>
+
+</body>
+</html>

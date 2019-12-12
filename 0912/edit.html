@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Edit Page</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+  <!-- root -->
+  <div id="app">
+   <h3>{{title}}</h3>
+   <!-- <p v-for="(data, index) in userArray" key=data.name>
+     <input type="text" v-bind:value="data">
+   </p> -->
+   <user-form v-bind:user-data="userArray"></user-form>
+    </div>
+  
+  <template id="bla">
+    <div>
+      <p>{{title}}</p>
+      <p v-for="data in userData" key=data.name>
+        <input type="text" v-bind:value="data">
+      </p>
+    </div>
+  </template>
+
+  <script>
+
+  let UserForm = {
+    template: '#bla',
+
+    props: {
+      userData: Array
+    },
+    
+
+    data: function() {
+      return {
+        title: 'User Form',
+      }
+    }
+  }
+
+  new Vue({
+    el: '#app',
+    
+    components: {
+      'user-form': UserForm,
+      
+    },
+
+    
+
+    data: function() {
+      return {
+        title: 'Hello Vue ',
+        user: {},
+        userArray: [],
+
+      }
+    },
+
+    methods: {
+      
+    },
+
+    created() {
+      this.user = {
+        name: 'John Doe',
+        salary: '$1100',
+        phone: '555-22-777'
+      }
+    },
+
+    mounted() {
+      for(let i in this.user) {
+        this.userArray.push(this.user[i])
+      }
+    }
+  })
+  </script>
+
+</body>
+</html>
