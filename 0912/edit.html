@@ -17,8 +17,11 @@
      <input type="text" v-bind:value="data">
    </p> -->
    <user-form v-bind:user-data="userArray"></user-form>
+
+   <test-comp></test-comp>
     </div>
   
+  <!-- 1 -->
   <template id="bla">
     <div>
       <p>{{title}}</p>
@@ -28,15 +31,25 @@
     </div>
   </template>
 
+  <!-- 2 -->
+  <template id="bla-bla">
+    <div>
+      {{title}}
+    </div>
+  </template>
+
   <script>
 
+
+// componets
+//1
   let UserForm = {
     template: '#bla',
 
     props: {
-      userData: Array
+      userData: Array,
+      required: true
     },
-    
 
     data: function() {
       return {
@@ -45,11 +58,27 @@
     }
   }
 
+//2
+  let testcomp = {
+      template: '#bla-bla',
+      props: {
+
+      },
+      data: function() {
+        return {
+          title: 'Second Componet Title'
+
+        }
+      }
+    }
+
+// VUE
   new Vue({
     el: '#app',
     
     components: {
       'user-form': UserForm,
+      'test-comp': testcomp,
       
     },
 
