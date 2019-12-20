@@ -8,8 +8,7 @@
 
 <script>
 export default {
-  name: 'edituser',
-  
+  name: 'EditUser',
 
   data: function() {
     return {
@@ -21,6 +20,5 @@ export default {
       }
     }
   }
-
 }
 </script>

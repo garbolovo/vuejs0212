@@ -37,7 +37,7 @@
 import axios from 'axios'
 export default {
   name: 'Users',
-  
+
   data: function() {
     return {
       title: 'USERS',
