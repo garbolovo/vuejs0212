@@ -1,5 +1,6 @@
 <template>
   <div>
+    EDIT USER
     <p>{{ title }}</p>
     <p>{{ user.name }}</p>
     <button type="button">Click</button>
