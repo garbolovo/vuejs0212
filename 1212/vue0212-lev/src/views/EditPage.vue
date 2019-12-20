@@ -9,8 +9,6 @@
 import EditUser from '@/components/EditUser.vue'
 export default {
   name: 'EditPage',
-  componets: { 'edit-user': EditUser },
-
-  
+  componets: { 'edit-user': EditUser }
 }
 </script>
