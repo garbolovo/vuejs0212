@@ -1,7 +1,7 @@
 <template>
   <div>
     {{ title }}
-    <edituser/>
+    <edit-user />
   </div>
 </template>
 
@@ -9,7 +9,7 @@
 import EditUser from '@/components/EditUser.vue'
 export default {
   name: 'EditPage',
-  componets: { EditUser},
+  componets: { 'edit-user' : EditUser},
 
   data: function() {
     return {
