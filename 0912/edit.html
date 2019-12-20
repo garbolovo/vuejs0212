@@ -13,31 +13,20 @@
   <!-- root -->
   <div id="app">
    <h3>{{title}}</h3>
-   <!-- <p v-for="(data, index) in userArray" key=data.name>
-     <input type="text" v-bind:value="data">
-   </p> -->
-   <user-form v-bind:user-data="userArray"></user-form>
-
-   <test-comp></test-comp>
+   <user-form v-bind:user="user"></user-form>
     </div>
   
   <!-- 1 -->
   <template id="bla">
     <div>
       <p>{{title}}</p>
-      <p v-for="data in userData" key=data.name>
-        <input type="text" v-bind:value="data">
+      <p v-for="value in user">
+        <input type="text" v-bind:value="value">
       </p>
     </div>
   </template>
 
-  <!-- 2 -->
-  <template id="bla-bla">
-    <div>
-      {{title}}
-    </div>
-  </template>
-
+  
   <script>
 
 
@@ -47,7 +36,7 @@
     template: '#bla',
 
     props: {
-      userData: Array,
+      user: Object,
       required: true
     },
 
@@ -58,19 +47,7 @@
     }
   }
 
-//2
-  let testcomp = {
-      template: '#bla-bla',
-      props: {
 
-      },
-      data: function() {
-        return {
-          title: 'Second Componet Title'
-
-        }
-      }
-    }
 
 // VUE
   new Vue({
@@ -78,7 +55,7 @@
     
     components: {
       'user-form': UserForm,
-      'test-comp': testcomp,
+      
       
     },
 
@@ -87,9 +64,8 @@
     data: function() {
       return {
         title: 'Hello Vue ',
-        user: {},
-        userArray: [],
-
+        user: null,
+        
       }
     },
 
@@ -105,11 +81,7 @@
       }
     },
 
-    mounted() {
-      for(let i in this.user) {
-        this.userArray.push(this.user[i])
-      }
-    }
+    
   })
   </script>
 

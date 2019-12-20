@@ -8,10 +8,10 @@
 
 <script>
 export default {
-  name: 'Editpage',
+  name: 'Edituser',
   data: function() {
     return {
-      title: 'HELLO FORM EDIT COMP',
+      title: 'HELLO FORM EDIT  USER',
       user: {
         name: 'John Doe',
         age: 31,
