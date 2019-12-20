@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Userlist from '../views/UserList.vue'
-import Edit from '../views/EditUser.vue'
+import Userlist from '@/views/UserList.vue'
+import Edit from '@/views/EditPage.vue'
 
 Vue.use(VueRouter)
 
@@ -21,7 +21,7 @@ const routes = [
   },
   {
     path: '/edit',
-    name: 'edit',
+    name: 'UserList',
     component: Edit
   }
 ]

@@ -8,10 +8,12 @@
 
 <script>
 export default {
-  name: 'Edituser',
+  name: 'edituser',
+  
+
   data: function() {
     return {
-      title: 'HELLO FORM EDIT  USER',
+      title: 'HELLO FORM EDIT USER',
       user: {
         name: 'John Doe',
         age: 31,
@@ -19,5 +21,6 @@ export default {
       }
     }
   }
+
 }
 </script>
