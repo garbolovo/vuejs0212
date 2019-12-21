@@ -1,8 +1,8 @@
 <template>
   <div>
     <div style="margin-bottom: 20px">USER DATA EDIT</div>
-    <div v-for="value in muser" v-bind:key=value>
-      <input type="text" v-bind:value="value">
+    <div v-for="value in muser" :key="value">
+      <input type="text" :value="value" />
     </div>
   </div>
 </template>
@@ -13,14 +13,19 @@ export default {
   props: {
     muser: {
       type: Object,
-      required: true
+      required: true,
+      default: function() {
+        return {
+          name: 'Name',
+          job: 'Job',
+          age: 'Age'
+        }
+      }
     }
-
   },
   data: function() {
     return {
-      expression: 'Hello World !',
-
+      expression: 'Hello World !'
     }
   }
 }

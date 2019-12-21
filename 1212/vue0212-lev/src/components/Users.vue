@@ -1,7 +1,9 @@
 <template>
-  <div>
-    <p>{{ title }} - from users component</p>
-    <div id="users">
+  <div >
+    <div v-if="!users.length">
+      <h3>Загрузка .....</h3>
+    </div>
+    <div v-else id="users">
       <div>
         <table>
           <thead>

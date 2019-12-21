@@ -1,7 +1,8 @@
 <template>
   <div>
     <h1>Edit Page</h1>
-    <Edit :muser="user" />
+    <!--    <Edit :muser="user" />-->
+    <Edit :muser="user"></Edit>
   </div>
 </template>
 
