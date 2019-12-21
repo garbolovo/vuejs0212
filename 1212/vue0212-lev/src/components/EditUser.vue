@@ -1,6 +1,8 @@
 <template>
   <div>
-    <p>{{ muser }}</p>
+    <div v-for="value in muser" v-bind:key=value>
+      <input type="text" v-bind:value="value">
+    </div>
   </div>
 </template>
 
@@ -9,11 +11,14 @@ export default {
   name: 'Edituser',
   props: {
     muser: Object,
+    // eslint-disable-next-line vue/require-prop-type-constructor
     required: true,
+
   },
   data: function() {
     return {
-      expression: 'Hello World !'
+      expression: 'Hello World !',
+
     }
   }
 }
