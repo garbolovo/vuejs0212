@@ -1,25 +1,21 @@
 <template>
   <div>
-    EDIT USER
-    <p>{{ title }}</p>
-    <p>{{ user.name }}</p>
-    <button type="button">Click</button>
+    <p>{{ muser }}</p>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'EditUser',
-
+  name: 'Edituser',
+  props: {
+    muser: Object,
+    required: true,
+  },
   data: function() {
     return {
-      title: 'HELLO FORM EDIT USER',
-      user: {
-        name: 'John Doe',
-        age: 31,
-        job: 'Teacher'
-      }
+      expression: 'Hello World !'
     }
   }
 }
 </script>
+<style></style>
