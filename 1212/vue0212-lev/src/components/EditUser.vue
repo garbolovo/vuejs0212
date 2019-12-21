@@ -11,9 +11,10 @@
 export default {
   name: 'Edituser',
   props: {
-    muser: Object,
-    // eslint-disable-next-line vue/require-prop-type-constructor
-    required: true,
+    muser: {
+      type: Object,
+      required: true
+    }
 
   },
   data: function() {
