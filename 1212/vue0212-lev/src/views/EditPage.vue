@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Edit Page</h1>
-    <Edit :muser="user" />
+    <Edit v-bind:muser="user"></Edit>
   </div>
 </template>
 
