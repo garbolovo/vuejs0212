@@ -1,8 +1,10 @@
 <template>
-  <div>
-    <div style="margin-bottom: 20px">USER DATA EDIT</div>
+  <div id="edituser">
+    <div style="margin-bottom: 20px">
+      <p>USER DATA EDIT</p>
+    </div>
     <div v-for="value in muser" :key="value">
-      <input type="text" :value="value" />
+      <input class="input" type="text" :value="value" />
     </div>
   </div>
 </template>
@@ -13,21 +15,27 @@ export default {
   props: {
     muser: {
       type: Object,
-      required: true,
-      default: function() {
-        return {
-          name: 'Name',
-          job: 'Job',
-          age: 'Age'
-        }
-      }
+      required: true
     }
   },
-  data: function() {
-    return {
-      expression: 'Hello World !'
-    }
-  }
+  
 }
 </script>
-<style></style>
+
+
+<style scoped>
+#edituser {
+  width: 400px;
+  background: #8faac4;
+  margin: 15px;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.input {
+  width: 350px;
+  margin: 10px 0;
+  padding: 5px;
+  border-radius: 3px;
+}
+</style>

@@ -1,5 +1,5 @@
 <template>
-  <div >
+  <div>
     <div v-if="!users.length">
       <h3>Загрузка .....</h3>
     </div>
@@ -19,7 +19,9 @@
           </thead>
           <tbody>
             <tr v-for="user in users" :key="user.phone">
-              <td>{{ user.id }}</td>
+              <td>
+                <router-link :to="'/edit/' + user.id"> #{{ user.id }} </router-link>
+              </td>
               <td>{{ user.firstName }}</td>
               <td>{{ user.lastName }}</td>
               <td>{{ user.balance }}</td>
