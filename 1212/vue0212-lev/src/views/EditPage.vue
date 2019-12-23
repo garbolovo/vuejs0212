@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Edit Page</h1>
-    <p> User - {{ id }}</p>
+    <p>User - {{ id }}</p>
     <div id="components">
       <Edit class="editcomp" :muser="user" />
     </div>
