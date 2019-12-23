@@ -3,9 +3,12 @@
     <div style="margin-bottom: 20px">
       <p>USER DATA EDIT</p>
     </div>
-    <div v-for="value in muser" :key="value">
-      <input class="input" type="text" :value="value" />
+    <div v-for="(value, name) in muser" :key="value">
+      <p>{{ name }}</p>
+      <input v-model="value" class="input" type="text" />
     </div>
+
+    <pre>{{ muser }}</pre>
   </div>
 </template>
 
