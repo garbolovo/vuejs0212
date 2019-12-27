@@ -9,7 +9,6 @@
           :value="value"
           class="input"
           type="text"
-          autofocus
           @input="setNewValues(value, name, $event)"
         />
       </div>
