@@ -5,7 +5,13 @@
 
       <div v-for="(value, name) in muser" :key="value">
         <p>{{ name }}</p>
-        <input :value="value" class="input" type="text" @input="value = $event.target.value" />
+        <input
+          :value="value"
+          class="input"
+          type="text"
+          autofocus
+          @input="setNewValues(value, name, $event)"
+        />
       </div>
     </div>
 
@@ -21,6 +27,12 @@ export default {
     muser: {
       type: Object,
       required: true
+    }
+  },
+
+  methods: {
+    setNewValues(value, name, event) {
+      this.$set(this.muser, name, event.target.value)
     }
   }
 }
