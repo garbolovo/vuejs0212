@@ -2,10 +2,11 @@
   <div id="edituser">
     <div style="margin-bottom: 20px">
       <p>USER DATA EDIT</p>
-    </div>
-    <div v-for="(value, name) in muser" :key="value">
-      <p>{{ name }}</p>
-      <input v-model="value" class="input" type="text" />
+
+      <div v-for="(value, name) in muser" :key="value">
+        <p>{{ name }}</p>
+        <input :value="value" class="input" type="text" @input="value = $event.target.value" />
+      </div>
     </div>
 
     <pre>{{ muser }}</pre>
@@ -15,6 +16,7 @@
 <script>
 export default {
   name: 'Edituser',
+
   props: {
     muser: {
       type: Object,

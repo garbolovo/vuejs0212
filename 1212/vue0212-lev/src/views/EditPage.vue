@@ -2,7 +2,7 @@
   <div>
     <h1>Edit Page</h1>
     <p>User - {{ id }}</p>
-    <div id="components">
+    <div v-if="user" id="components">
       <Edit class="editcomp" :muser="user" />
     </div>
   </div>
