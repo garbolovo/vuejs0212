@@ -3,14 +3,15 @@
     <div style="margin-bottom: 20px">
       <p>USER DATA EDIT</p>
 
-      <div v-for="(value, name) in muser" :key="value">
-        <p>{{ name }}</p>
-        <input
-          :value="value"
-          class="input"
-          type="text"
-          @input="setNewValues(value, name, $event)"
-        />
+      <div>
+        <p>Name</p>
+        <input type="text" v-model="muser.firstName">
+        <p>Last Name</p>
+        <input type="text" v-model="muser.lastName">
+        <p>PHONE</p>
+        <input type="text" v-model="muser.phone">
+        <p>Company</p>
+        <input type="text" v-model="muser.company">
       </div>
     </div>
 
