@@ -5,13 +5,13 @@
 
       <div>
         <p>Name</p>
-        <input type="text" v-model="muser.firstName">
+        <input v-model="muser.firstName" type="text" />
         <p>Last Name</p>
-        <input type="text" v-model="muser.lastName">
+        <input v-model="muser.lastName" type="text" />
         <p>PHONE</p>
-        <input type="text" v-model="muser.phone">
+        <input v-model="muser.phone" type="text" />
         <p>Company</p>
-        <input type="text" v-model="muser.company">
+        <input v-model="muser.company" type="text" />
       </div>
     </div>
 
