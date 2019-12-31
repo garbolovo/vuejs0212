@@ -28,12 +28,6 @@ export default {
       type: Object,
       required: true
     }
-  },
-
-  methods: {
-    setNewValues(value, name, event) {
-      this.$set(this.muser, name, event.target.value)
-    }
   }
 }
 </script>
