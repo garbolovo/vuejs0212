@@ -2,7 +2,6 @@
   <div id="edituser">
     <div style="margin-bottom: 20px">
       <p>USER DATA EDIT</p>
-
       <div>
         <p>Name</p>
         <input v-model="muser.firstName" type="text" />
@@ -14,6 +13,8 @@
         <input v-model="muser.company" type="text" />
       </div>
     </div>
+
+    <button type="submit" @click="saveUser">Save User</button>
 
     <pre>{{ muser }}</pre>
   </div>
@@ -27,6 +28,12 @@ export default {
     muser: {
       type: Object,
       required: true
+    }
+  },
+
+  methods: {
+    saveUser() {
+      console.log('saveUser invoked !')
     }
   }
 }
